@@ -56,8 +56,8 @@ public class FirstPersonController : MonoBehaviour
     #region Movement Variables
 
     public bool playerCanMove = true;
-    public float walkSpeed = 5f;
-    public float maxVelocityChange = 10f;
+    public float walkSpeed = 100f;
+    public float maxVelocityChange = 100f;
 
     // Internal Variables
     private bool isWalking = false;
@@ -67,7 +67,7 @@ public class FirstPersonController : MonoBehaviour
     public bool enableSprint = true;
     public bool unlimitedSprint = false;
     public KeyCode sprintKey = KeyCode.LeftShift;
-    public float sprintSpeed = 100f;
+    public float sprintSpeed = 300f;
     public float sprintDuration = 5f;
     public float sprintCooldown = .5f;
     public float sprintFOV = 80f;

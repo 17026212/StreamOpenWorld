@@ -33,39 +33,25 @@ public class HideTiles : MonoBehaviour
         {
             foreach (GameObject tile in tiles)
             {
-                Vector3 tilePosition = tile.gameObject.transform.position + (tileSize / 2f);
-                float xDistance = Mathf.Abs(tilePosition.x - playerPosition.x);
-                float zDistance = Mathf.Abs(tilePosition.z - playerPosition.z);
-                if (xDistance + zDistance > maxDistance && tile.gameObject.GetComponent<MeshFilter>() == true)
+
+                Vector3 tilePosition = tile.transform.position;
+                tilePosition += new Vector3(tileSize.x / 2, 0, tileSize.z / 2);
+
+                //Debug.Log(tile.name + " : " + tile.transform.position);
+              //  Debug.Log("Check " + tile.name + " : " + tilePosition);
+
+               if (Vector3.Distance(tilePosition, playerPosition) > maxDistance && tile.gameObject.GetComponent<MeshFilter>() == true)
                 {
-
-                        // tile.SetActive(false);
-                        //tile.
-                        //Debug.Log("Deactive!");
-                        //saveNLoad.test();
                         saveNLoad.Save(tile.gameObject.name, tile.gameObject);
-                        //RemoveElement(ref tiles, 1);
                         Destroy(tile.GetComponent<MeshFilter>());
-
                         Destroy(tile.GetComponent<MeshRenderer>());
-                        Destroy(tile.GetComponent<MeshCollider>());
-                    
+                        Destroy(tile.GetComponent<MeshCollider>());     
                 }
-
-                
-                    if (xDistance + zDistance < maxDistance && tile.gameObject.GetComponent<MeshFilter>() == null)
+  
+                    else if (Vector3.Distance(tilePosition, playerPosition) < maxDistance && tile.gameObject.GetComponent<MeshFilter>() == null)
                     {
                        saveNLoad.Load(tile.gameObject.name, tile);
-
-
-                    //print("Fuck");
-                    }
-
-                else
-                {
-
-                }
-                
+                    }             
             }
         }
     }
