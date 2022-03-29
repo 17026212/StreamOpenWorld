@@ -113,24 +113,5 @@ public class SaveNLoad : MonoBehaviour
         }
     }
 
-
-    public void Test()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            chunkData = new ChunkData();
-            //chunkData.serializableMesh = mesh;
-            //chunkData.serializableMaterial = material;
-            //mesh  = testObject.gameObject.GetComponent<MeshFilter>();
-   
-            testObject.gameObject.GetComponent<MeshFilter>().sharedMesh = mesh.sharedMesh;
-
-            json = JsonUtility.ToJson(chunkData, true);
-            dataPath = Application.persistentDataPath + "/" + name + ".json";
-            File.WriteAllText(dataPath, json);
-
-        }
-
-    }
 }
 
