@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: NarrationLine_Dialogue1_2
   m_EditorClassIdentifier: 
   m_Speaker: {fileID: 11400000, guid: 9dd3082631238414f8db3e72be080f21, type: 2}
-  m_Text: Test number 2
+  m_Text: I think he was last seen working on the Highway past that sign

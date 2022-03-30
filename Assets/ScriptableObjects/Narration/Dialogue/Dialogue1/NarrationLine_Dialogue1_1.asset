@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: NarrationLine_Dialogue1_1
   m_EditorClassIdentifier: 
   m_Speaker: {fileID: 11400000, guid: 9dd3082631238414f8db3e72be080f21, type: 2}
-  m_Text: Hello World!
+  m_Text: Welcome Stranger, go find Billy!
