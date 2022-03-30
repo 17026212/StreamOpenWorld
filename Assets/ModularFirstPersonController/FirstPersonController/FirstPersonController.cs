@@ -151,20 +151,20 @@ public class FirstPersonController : MonoBehaviour
 
     void Start()
     {
-        if(lockCursor)
-        {
-            Cursor.lockState = CursorLockMode.Locked;
-        }
+        //if(lockCursor)
+        //{
+        //    Cursor.lockState = CursorLockMode.Locked;
+        //}
 
-        if(crosshair)
-        {
-            crosshairObject.sprite = crosshairImage;
-            crosshairObject.color = crosshairColor;
-        }
-        else
-        {
-            crosshairObject.gameObject.SetActive(false);
-        }
+        //if(crosshair)
+        //{
+        //    crosshairObject.sprite = crosshairImage;
+        //    crosshairObject.color = crosshairColor;
+        //}
+        //else
+        //{
+        //    crosshairObject.gameObject.SetActive(false);
+        //}
 
         #region Sprint Bar
 

@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: NarrationLine_Dialogue2_1
   m_EditorClassIdentifier: 
   m_Speaker: {fileID: 11400000, guid: f3e8b9ff5442d904a98d7a76ce18e83b, type: 2}
-  m_Text: What do you choose ?
+  m_Text: Are you ready to take me back?

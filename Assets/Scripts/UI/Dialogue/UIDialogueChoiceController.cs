@@ -28,5 +28,6 @@ public class UIDialogueChoiceController : MonoBehaviour
     private void OnClick()
     {
         m_DialogueChannel.RaiseRequestDialogueNode(m_ChoiceNextNode);
+        Debug.Log("Button pressed");
     }
 }
