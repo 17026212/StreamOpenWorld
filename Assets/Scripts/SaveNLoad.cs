@@ -20,7 +20,7 @@ public class SaveNLoad : MonoBehaviour
     string json;
     string dataPath;
     string finalFilePath;
-
+    Material material;
 
 
 
@@ -59,6 +59,28 @@ public class SaveNLoad : MonoBehaviour
 
         }
     }
+
+
+
+    public void SetMesh(Mesh setMesh, Material setMat, GameObject tileMesh)
+    {
+        if (this.GetComponent<MeshFilter>() == null)
+        {
+            tileMesh.gameObject.AddComponent<MeshFilter>();
+            tileMesh.gameObject.AddComponent<MeshRenderer>();
+            tileMesh.gameObject.AddComponent<MeshCollider>();
+
+            tileMesh.GetComponent<MeshFilter>().sharedMesh = setMesh;
+            tileMesh.GetComponent<MeshRenderer>().material = setMat;
+            tileMesh.GetComponent<MeshCollider>().sharedMesh = setMesh;
+            print("Set mesh on loaded terrain");
+        }
+
+
+        material = setMat;
+    }
+
+
 
 }
 
