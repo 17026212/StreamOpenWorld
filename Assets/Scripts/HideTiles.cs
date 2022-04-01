@@ -13,13 +13,12 @@ public class HideTiles : MonoBehaviour
     [SerializeField]
     private int maxDistance;
     public GameObject[] tiles;
-    //public List<GameObject> chunks = new List<GameObject>();
+
 
     static public SaveNLoad saveNLoad;
     // Use this for initialization
     void Start()
     {
-        //tiles.Add(GameObject.FindGameObjectsWithTag(tileTag));
         saveNLoad = FindObjectOfType<SaveNLoad>();
         this.tiles = GameObject.FindGameObjectsWithTag(tileTag);
         DeactivateDistantTiles();
@@ -36,9 +35,6 @@ public class HideTiles : MonoBehaviour
 
                 Vector3 tilePosition = tile.transform.position;
                 tilePosition += new Vector3(tileSize.x / 2, 0, tileSize.z / 2);
-
-                //Debug.Log(tile.name + " : " + tile.transform.position);
-              //  Debug.Log("Check " + tile.name + " : " + tilePosition);
 
                if (Vector3.Distance(tilePosition, playerPosition) > maxDistance && tile.gameObject.GetComponent<MeshFilter>() == true)
                 {
@@ -61,15 +57,7 @@ public class HideTiles : MonoBehaviour
 
     }
 
-    private void RemoveElement<T>(ref T[] arr, int index)
-    {
-        for(int i = index; i < arr.Length - 1; i++)
-        {
-            arr[i] = arr[i + 1];
-        }
 
-        Array.Resize(ref arr, arr.Length - 1);
-    }
 
     
 }
